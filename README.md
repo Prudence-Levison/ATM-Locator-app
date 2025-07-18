@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +35,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+=======
+# ATM-Locator-app
+
+This project presents the design and implementation of a map-based ATM locator web application that automatically detects and stores the location of ATM points visited by users. The application uses browser geolocation and a free map tool (Leaflet.js with OpenStreetMap) to collect and display ATM locations. Users do not manually enter data; the system captures their coordinates and selected bank/status when they are physically near an ATM. All ATMs are displayed on a map, with markers indicating their availability status, allowing users to quickly find functioning ATMs within their area.
+>>>>>>> 4298b750584de64af667771cef53405d255ebc55
