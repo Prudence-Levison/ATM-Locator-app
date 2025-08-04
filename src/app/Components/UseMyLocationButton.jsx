@@ -1,11 +1,12 @@
 "use client";
 import React from 'react';
 import { useState } from 'react';
-
-const UseMyLocationButton = () => {
+import FindATM from './FindATM';
+import AddATM from './AddATM';
+const UseMyLocationButton = ({setUserCoordinate}) => {
   const [dropdown, setDropdown] =useState(false)
   const [selectedState, setSelectedState] = useState();
-
+  
   const handleDropdown =( ) =>{
     setDropdown(!dropdown)
   }
@@ -17,6 +18,8 @@ const UseMyLocationButton = () => {
     setSelectedState("add");
     setDropdown(false)
   }
+
+
   return (
     <div className="relative inline-block text-left"
     >
@@ -30,7 +33,7 @@ const UseMyLocationButton = () => {
               <div   onClick={handleAddATM} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Add this ATM</div>
             
             </div>}
-            {selectedState === 'find' && <FindATM />}
+            {selectedState === 'find' && <FindATM setUserCoordinate={setUserCoordinate} />}
             {selectedState === 'add' && <AddATM />}
     </div>
   )

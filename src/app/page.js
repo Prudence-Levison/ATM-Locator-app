@@ -1,11 +1,21 @@
-import MapView from "./Components/MapView";
+"use client"
+import dynamic from "next/dynamic";
+// import MapView from "./Components/MapView";
 import SearchBar from "./Components/SearchBar";
 import UseMyLocationButton from "./Components/UseMyLocationButton";
+import { useState } from "react";
+
+const MapView = dynamic(() => import("./Components/MapView"), {
+  ssr: false,
+});
 
 export default function HomePage() {
+
+  const [ userCoordinate, setUserCoordinate] =useState(null);
+
   return (
     <div className="relative h-screen w-screen">
-      <MapView />
+      <MapView userCoordinate={userCoordinate} />
 
     
       <div className="absolute top-0 left-0 w-full flex justify-between items-center px-4 py-6 bg-white/20 backdrop-blur-md z-10">
@@ -14,7 +24,7 @@ export default function HomePage() {
         <SearchBar />
       </div>
        <div className="absolute bottom-2 right-8 z-0">
-        <UseMyLocationButton />
+        <UseMyLocationButton setUserCoordinate={setUserCoordinate} />
       </div>
       </div>
 
